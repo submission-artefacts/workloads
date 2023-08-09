@@ -1,0 +1,250 @@
+{
+    "linpack": [
+        {
+            "n": 100
+        },
+        {
+            "n": 1000
+        },
+        {
+            "n": 10000
+        }
+    ],
+    "matmul": [
+        {
+            "n": 100
+        },
+        {
+            "n": 1000
+        },
+        {
+            "n": 10000
+        }
+    ],
+    "chameleon": [
+        {
+            "num_of_rows": "10",
+            "num_of_cols": "10"
+        },
+        {
+            "num_of_rows": "50",
+            "num_of_cols": "50"
+        },
+        {
+            "num_of_rows": "100",
+            "num_of_cols": "100"
+        }
+    ],
+    "video_processing": [
+        {
+            "file_name": "office.mp4"
+        },
+        {
+            "file_name": "SampleVideo_1280x720_10mb.mp4"
+        },
+        {
+            "file_name": "1.mp4"
+        }
+    ],
+    "image_processing": [
+        {
+            "file_name": "maxresdefault.jpg"
+        },
+        {
+            "file_name": "image.jpg"
+        },
+        {
+            "file_name": "animal-dog.jpg"
+        }
+    ],
+    "model_training": [
+        {
+            "dataset_bucket": "food_reviews_3",
+            "dataset_name": "reviews20mb.csv",
+            "model_bucket": "model",
+            "model_name": "lr_model_20mb.pk"
+        },
+        {
+            "dataset_bucket": "food_reviews_3",
+            "dataset_name": "reviews50mb.csv",
+            "model_bucket": "model",
+            "model_name": "lr_model_50mb.pk"
+        },
+        {
+            "dataset_bucket": "food_reviews_3",
+            "dataset_name": "reviews100mb.csv",
+            "model_bucket": "model",
+            "model_name": "lr_model_100mb.pk"
+        }
+    ],
+    "pyaes": [
+        {
+            "length_of_message": "50",
+            "num_of_iterations": "100"
+        },
+        {
+            "length_of_message": "100",
+            "num_of_iterations": "200"
+        },
+        {
+            "length_of_message": "200",
+            "num_of_iterations": "400"
+        }
+    ],
+    "orchestrator": [
+        {
+            "input_bucket": "food_reviews_1",
+            "output_bucket": "extracted_1"
+        },
+        {
+            "input_bucket": "food_reviews_2",
+            "output_bucket": "extracted_2"
+        },
+        {
+            "input_bucket": "food_reviews_3",
+            "output_bucket": "extracted_3"
+        }
+    ],
+    "feature_reducer": [
+        {
+            "input_bucket": "extracted_1"
+        },
+        {
+            "input_bucket": "extracted_2"
+        },
+        {
+            "input_bucket": "extracted_3"
+        }
+    ],
+    "get_job_status": [
+        {
+            "num_of_file": 2,
+            "input_bucket": "extracted_1"
+        },
+        {
+            "num_of_file": 2,
+            "input_bucket": "extracted_2"
+        },
+        {
+            "num_of_file": 4,
+            "input_bucket": "extracted_3"
+        }
+    ],
+    "driver": [
+        {
+            "job_bucket": "mapped_1",
+            "bucket": "food_reviews_3",
+            "n_mapper": 1
+        },
+        {
+            "job_bucket": "mapped_2",
+            "bucket": "food_reviews_3",
+            "n_mapper": 2        
+        },
+        {
+            "job_bucket": "mapped_3",
+            "bucket": "food_reviews_3",
+            "n_mapper": 4        
+        }
+    ],
+    "cnn_image_classification": [
+        {
+            "input_bucket": "image",
+            "object_key": "maxresdefault.jpg",
+            "model_bucket": "model",
+            "model_object_key": "squeezenet_weights_tf_dim_ordering_tf_kernels.h5"
+        },
+        {
+            "input_bucket": "image",
+            "object_key": "animal-cat.jpeg",
+            "model_bucket": "model",
+            "model_object_key": "squeezenet_weights_tf_dim_ordering_tf_kernels.h5"
+        },
+        {
+            "input_bucket": "image",
+            "object_key": "animal-dog.jpg",
+            "model_bucket": "model",
+            "model_object_key": "squeezenet_weights_tf_dim_ordering_tf_kernels.h5"
+        }
+    ],
+    "ml_lr_prediction": [
+        {
+            "x": "The ambiance is magical. The food and service was nice! The lobster and cheese was to die for and our steaks were cooked perfectly.",
+            "dataset_bucket": "food_reviews_3",
+            "dataset_object_key": "reviews20mb.csv",
+            "model_bucket": "model",
+            "model_object_key": "lr_model_20mb.pk"
+        },
+        {
+            "x": "The ambiance is magical. The food and service was nice! The lobster and cheese was to die for and our steaks were cooked perfectly.",
+            "dataset_bucket": "food_reviews_3",
+            "dataset_object_key": "reviews50mb.csv",
+            "model_bucket": "model",
+            "model_object_key": "lr_model_50mb.pk"
+        },
+        {
+            "x": "The ambiance is magical. The food and service was nice! The lobster and cheese was to die for and our steaks were cooked perfectly.",
+            "dataset_bucket": "food_reviews_3",
+            "dataset_object_key": "reviews100mb.csv",
+            "model_bucket": "model",
+            "model_object_key": "lr_model_100mb.pk"
+        }
+    ],
+    "ml_video_face_detection": [
+        {
+            "input_bucket": "video",
+            "object_key": "3sec-cut.mp4",
+            "output_bucket": "video",
+            "model_object_key": "haarcascade_frontalface_default.xml",
+            "model_bucket": "model"
+        },
+        {
+            "input_bucket": "video",
+            "object_key": "30sec-cut.mp4",
+            "output_bucket": "video",
+            "model_object_key": "haarcascade_frontalface_default.xml",
+            "model_bucket": "model"
+        },
+        {
+            "input_bucket": "video",
+            "object_key": "60sec-cut.mp4",
+            "output_bucket": "video",
+            "model_object_key": "haarcascade_frontalface_default.xml",
+            "model_bucket": "model"
+        }
+    ],
+    "rnn_generate_character_level": [
+        {
+            "language": "Italian",
+            "start_letters": "AB",
+            "model_parameter_object_key": "rnn_params.pkl",
+            "model_object_key": "rnn_model.pth",
+            "model_bucket": "model"
+        },
+        {
+            "language": "English",
+            "start_letters": "ABCD",
+            "model_parameter_object_key": "rnn_params.pkl",
+            "model_object_key": "rnn_model.pth",
+            "model_bucket": "model"
+        },
+        {
+            "language": "Italian",
+            "start_letters": "ABCDEFGH",
+            "model_parameter_object_key": "rnn_params.pkl",
+            "model_object_key": "rnn_model.pth",
+            "model_bucket": "model"
+        }
+    ],
+    "float_operation": [
+        {
+            "n": 100
+        },
+        {
+            "n": 1000
+        },
+        {
+            "n": 10000
+        }
+    ]
+}

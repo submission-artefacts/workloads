@@ -1,0 +1,21 @@
+{
+  "linpack": 30,
+  "matmul": 30,
+  "chameleon": 30,
+  "video_processing": 30,
+  "image_processing": 30,
+  "model_training": 30,
+  "pyaes": 30,
+  "feature_extractor": 2,
+  "feature_reducer": 30,
+  "orchestrator": 30,
+  "get_job_status": 30,
+  "mapper":  30,
+  "reducer":  2,
+  "driver":  30,
+  "cnn_image_classification":  30,
+  "ml_lr_prediction":  30,
+  "ml_video_face_detection": 30,
+  "rnn_generate_character_level": 30,
+  "float_operation": 30
+}
